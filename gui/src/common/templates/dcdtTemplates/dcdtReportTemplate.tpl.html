@@ -1,0 +1,53 @@
+<div id="hosting-testcase-desc" class="field field-tight">
+	<div>
+	   <div><span><strong>Binding Type</strong>: {{data.Binding_Type}}</span>
+	   </div>
+	   <div><span><strong>Location Type</strong>: {{data.Location_Type}}</span>
+	   </div>
+	   <div><span><strong>Negative</strong>: {{data.Negative}}</span>
+	   </div>
+	   <div><span><strong>Optional</strong>: {{data.Optional}}</span>
+	   </div>
+	   <div><span><strong>Description</strong>: {{data.Description}}</span>
+	   </div>
+	   <div><span><strong>RTM Sections</strong>:{{data.RTM_Sections}}</span>
+	   </div>
+	   <div><span><strong>Underlying Specification References</strong>: </span>
+	   	    <ul>
+	   	       <div ng-if="data.RFC_4398"><li>RFC 4398: {{data.RFC_4398}}</li></div>
+	   	       <div ng-if="data.Direct_SHT"><li>Direct Applicability Statement for Secure Health Transport:{{data.Direct_SHT}}</li></div>
+	   	       <div ng-if="data.RFC_2798"><li>RFC 2798: {{data.RFC_2798}}</li></div>
+	   	    </ul>
+	   </div>
+	   <p>
+	   <div><span><strong>Instructions</strong>: {{data.Instructions}}</span>
+	   </div>
+	   <div><span><strong>Target Certificate(s)</strong>: </span>
+	   <div ng-repeat="field in data.Target_Certificate">
+	       <ul>
+	         <li><div><span><strong>{{field.name}}</strong>:</span></div></li>
+	         <ul>
+	            <li><div><span><strong>Valid</strong>:{{field.datatype}}</span></div></li>
+	            <li><div><span><strong>Binding Type</strong>:{{field.datatype}}</span></div></li>
+			        <div ng-repeat="fieldloc in field.location1">
+			        <li><div><span><strong>Location</strong>:{{field.datatype}}</span></div></li>
+			           <ul>
+			              <li><div><span><strong>Type</strong>:{{field.datatype}}</span></div></li>
+			              <li><div><span><strong>Mail Address</strong>:{{field.datatype}}</span></div></li>
+                       </ul>
+			        </div>
+	         <ul>
+	       </ul>
+	   </div>
+	   <div ng-repeat="fieldbac in data.Background_Certificate">
+	       <div><span><strong>value</strong>:{{fieldbac.value}}</span>
+	       <div><span><strong>readOnly</strong>:{{fieldbac.readOnly}}</span>
+	       	   <div ng-repeat="fieldloc in fieldbac.location1">
+		   	       <div><span><strong>display</strong>:{{fieldloc.display}}</span>
+		   	   </div>
+	      </div>
+	   </div>
+
+	</div>
+
+ </div>
