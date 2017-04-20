@@ -12,6 +12,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.apache.log4j.Logger;
+import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -49,12 +50,20 @@ public class DCDTValidatorController {
 				CloseableHttpClient client = HttpClients.createDefault();
 				HttpPost post = new HttpPost(DCDT_HOSTING_URL);
 				//
-				JSONObject jo = new JSONObject();
-				jo.put("@type", "hostingTestcaseSubmission");
-				jo.put("directAddr", "provider1@direct.sitenv.org");
-				jo.put("testcase", "H2_DNS_AB_Normal");
+				JSONObject mainJosnObject = new JSONObject();
+				mainJosnObject.put("@type", "request");
 
-				message= jo.toString();
+				JSONArray itemArray = new JSONArray();
+
+				JSONObject arrayElementOne = new JSONObject();
+				arrayElementOne.put("@type", "hostingTestcaseSubmission");
+				arrayElementOne.put("directAddr", "provider1@direct.sitenv.org");
+				arrayElementOne.put("testcase", "H2_DNS_DB_Normal");
+				itemArray.put(arrayElementOne);
+
+				mainJosnObject.put("items",itemArray);
+
+				message= mainJosnObject.toString();
 
 				logger.info("message "+message);
 
@@ -104,7 +113,7 @@ post.setProtocolVersion(HttpVersion.HTTP_1_0);
 					map.add("testcase", "H2_DNS_AB_Normal");
 
 					result = restTemplate.postForObject(DCDT_HOSTING_URL, map, String.class);
-					
+
 */
 					//ResponseEntity<String> responseObj = restTemplate.getForEntity(DCDT_HOSTING_URL,String.class);
 					System.out.println(result);
@@ -114,8 +123,7 @@ post.setProtocolVersion(HttpVersion.HTTP_1_0);
 					throw new TTTCustomException("0x0076", "An error occured while creating json from file UnsupportedEncodingException");
 				}
 
-				System.out.println("test json string1111"+jo.toString());
-				logger.info("test json string11112222"+jo.toString());
-				return jo.toString();
+				logger.info("test json string11112222"+result.toString());
+				return result;
 	}
 }
