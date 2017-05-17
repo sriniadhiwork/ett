@@ -46,7 +46,7 @@ Download the most recent version of xdstools?.war from the following link:
 
 ## James server installation steps
 ## Direct RI server installation steps
-The original document for the installation steps is [here]
+The original document for the installation steps is [here](https://github.com/meaningfuluse/mu2/blob/master/transport/direct-hello-world.md)
 However it is outlined again here (in a shorter version).
 1. Install Java 8 (same steps as above): Note that the direct RI installation page recommends Java 7, we are moving to Java 8 for the whole installation. set JAVA_HOME to this path for the next steps.
 
