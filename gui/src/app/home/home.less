@@ -118,3 +118,134 @@
 .home-tools hr {
     border-color: inherit;
 }
+.sandbox-container{
+    padding-left: 0;
+    list-style: none;
+}
+
+sandbox-block {
+    color: #003366;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    display: block;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.sandbox-block:hover {
+    text-decoration: none !important;
+    background: #dddddd;
+}
+ 
+.sandbox-li:hover {
+    text-decoration: none !important;
+    background: #dddddd;
+} 
+.sandbox-block a{
+    color: #003366;
+    text-decoration: none !important;
+}
+
+.sandbox-block span {
+    display: block;
+    font-weight: 500;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    line-height: 1.1;
+    margin: 10px;
+    color: inherit;
+    font-size: 14px;
+    white-space: normal;
+}
+
+.sandbox-block .caption-head {
+    margin-top: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+    text-align:center;
+}
+
+.sandbox-block .caption-body {
+    font-size: 14px;
+    text-align:center;
+}
+
+.sandbox-block .glyphicon {
+    font-size: 50px;
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    text-align:center;
+    line-height: 1;
+}
+
+.sandbox-block h4{
+    white-space: normal;
+    text-align:center;
+    outline: none;
+}
+
+.sandbox-block a{
+    outline: none;
+}
+
+
+@media (min-width: 768px) {
+    .sandbox-container li{
+        float: left;
+        width: 33%;
+        height: 150px;
+        text-align:center;
+        border: 1px solid #e6e6e6;
+    }
+}
+
+@media (max-width: 767px) {
+    .sandbox-container li{
+        border: 1px solid #e6e6e6;
+        text-align:center;
+    }
+ }
+ 
+.featurestable{
+    width:100%;
+    height:100%;
+}
+
+.featurestable /deep/table{
+    margin: 0 auto;
+    width: 100%;
+}
+.featurestable /deep/thead th{
+    text-align:center;
+    border: 1px solid #ddd;
+    padding: 5px;
+    font-size: 12px;
+}
+
+.featurestable /deep/tbody td{
+    font-size: 12px;
+}
+
+.featurestable /deep/tbody {
+    overflow: auto;
+    width: 100%;
+}
+
+
+
+.featurestable /deep/tr:nth-child(even) {
+    background-color: #f8f8f8;
+}
+
+.featurestable /deep/td {
+    text-align:center;
+    border: 1px solid #ddd;
+    padding: 5px;
+}
