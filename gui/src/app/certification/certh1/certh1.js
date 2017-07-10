@@ -54,6 +54,21 @@ certCerth1.controller('Certh1Ctrl', ['$scope', '$stateParams','LogInfo','growl',
 			$scope.edgeProtocol = "certh1";
 			$scope.viewObj = "certh1";
 		}
+		if ($scope.filterCrit == "sb1"){
+			$scope.edgeProtocol = "surveilb1";
+			$scope.viewObj = "surveilb1";
+			$scope.testSystem = "surveillance";
+		}
+		if ($scope.filterCrit == "sh1"){
+			$scope.edgeProtocol = "surveilh1";
+			$scope.viewObj = "surveilh1";
+			$scope.testSystem = "surveillance";
+		}
+		if ($scope.filterCrit == "sh2"){
+			$scope.edgeProtocol = "surveilh2";
+			$scope.viewObj = "surveilh2";
+			$scope.testSystem = "surveillance";
+		}
 		if ($scope.filterCrit == "h2"){
 			$scope.edgeProtocol = "certh2";
 			$scope.viewObj = "certh2";
@@ -157,23 +172,23 @@ certCerth1.controller('Certh1Ctrl', ['$scope', '$stateParams','LogInfo','growl',
 		});
 
            $scope.firstCriteriaSelection= [
-            {  name: "All", testList:['h2'],selectOption:'ALL'},
-            {  name: "Setup", testList:['h2'],selectOption:'A'},
-            {  name: "Send", testList:['h2'],selectOption:'B'},
-            {  name: "Send - Delivery Notification for Direct", testList:['h2'],selectOption:'9'},
-            {  name: "Send using Direct+XDM", testList:['h2'],selectOption:'2'},
-            {  name: "Send conversion XDR", testList:['h2'],selectOption:'3'},
-            {  name: "Send using Edge Protocol",testList:['h2'],selectOption:'4'},
-            {  name: "Receive", testList:['h2'],selectOption:'5'},
-            {  name: "Receive - Delivery Notification in Direct",testList:['h2'],selectOption:'10'},
-            {  name: "Receive using Direct+XDM",testList:['h2'],selectOption:'6'},
-            {  name: "Receive conversion XDR",testList:['h2'],selectOption:'7'},
-            {  name: "Receive using Edge Protocol",testList:['h2'],selectOption:'8'}
+            {  name: "All", testList:['h2','sh2'],selectOption:'ALL'},
+            {  name: "Setup", testList:['h2','sh2'],selectOption:'A'},
+            {  name: "Send", testList:['h2','sh2'],selectOption:'B'},
+            {  name: "Send - Delivery Notification for Direct", testList:['h2','sh2'],selectOption:'9'},
+            {  name: "Send using Direct+XDM", testList:['h2','sh2'],selectOption:'2'},
+            {  name: "Send conversion XDR", testList:['h2','sh2'],selectOption:'3'},
+            {  name: "Send using Edge Protocol",testList:['h2','sh2'],selectOption:'4'},
+            {  name: "Receive", testList:['h2','sh2'],selectOption:'5'},
+            {  name: "Receive - Delivery Notification in Direct",testList:['h2','sh2'],selectOption:'10'},
+            {  name: "Receive using Direct+XDM",testList:['h2','sh2'],selectOption:'6'},
+            {  name: "Receive conversion XDR",testList:['h2','sh2'],selectOption:'7'},
+            {  name: "Receive using Edge Protocol",testList:['h2','sh2'],selectOption:'8'}
             ];
 
            $scope.secondCriteriaSelection= [
-            {  name: "Direct", testList:['h2'],selectOption:'ALL'},
-            {  name: "Edge", testList:['h2'],selectOption:'1'}
+            {  name: "Direct", testList:['h2','sh2'],selectOption:'ALL'},
+            {  name: "Edge", testList:['h2','sh2'],selectOption:'1'}
             ];
             });
 
