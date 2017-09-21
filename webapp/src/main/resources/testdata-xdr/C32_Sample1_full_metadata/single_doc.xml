@@ -187,7 +187,7 @@
                 </Name>
             </ExternalIdentifier>
             <ExternalIdentifier identificationScheme="urn:uuid:2e82c1f6-a085-4c72-9da3-8640a32e42ab"
-                value="Document01">
+                value="#DOCUMENT_ID#">
                 <Name>
                     <LocalizedString value="XDSDocumentEntry.uniqueId"/>
                 </Name>
