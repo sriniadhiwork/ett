@@ -1,5 +1,5 @@
 
-The script read files from /sites/ccda/data folder on the edgetest server and populates the mailboxes.
+The script reads the files from /sites/ccda/data folder on the edgetest server and populates the mailboxes.
 
 All the files are from https://github.com/siteadmin/2015-Certification-C-CDA-Test-Data/tree/master/Receiver%20SUT%20Test%20Data
 
